@@ -1,6 +1,5 @@
 package com.libertymutual.goforcode.invoicify.models;
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.libertymutual.goforcode.invoicify.models;
 
-
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
@@ -13,20 +12,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="billing_record")
-public abstract class BillingRecord {    
+@Table(name = "billing_record")
+public abstract class BillingRecord {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User createdBy;
-    
+
     private Date createdOn;
-    
+
     private String description;
-        
+
     public abstract double getTotal();
 
     public Date getCreatedOn() {
@@ -43,5 +42,21 @@ public abstract class BillingRecord {
 
     public void setDescription(String description) {
         this.description = description;
-    }  
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
+    }
 }
